@@ -1,14 +1,30 @@
-import React from 'react';
-import { View, Text, Button } from 'react-native';
+import React from "react";
+import {
+  ScrollView,
+  View,
+  Text,
+  TextInput,
+  Button,
+  Alert,
+  TouchableOpacity
+} from "react-native";
+import { Field, reduxForm } from "redux-form";
 
-const Register = ({ navigation }) => (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        onPress={() => navigation.navigate('Details')}
-        title="Go to details"
-      />
-    </View>
+import Form from "../../components/form/";
+
+const Register = props => {
+  const submit = values => {
+    // print the form values to the console
+    console.log(values);
+  };
+
+  return (
+    <ScrollView>
+      <View>
+        <Form onSubmit={submit} />
+      </View>
+    </ScrollView>
   );
+};
 
-  export default Register;
+export default Register;
